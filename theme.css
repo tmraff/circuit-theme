@@ -1,34 +1,40 @@
-body {
-	--radius-s: 0px;
-	--radius-m: 0px;
-	--radius-l: 0px;
-	--input-radius: 0px;
-	--tab-radius-active: 0px;
-	--checkbox-radius: 0px;
-	--toggle-radius: 0px;
-	--toggle-thumb-radius: 0px;
-	--slider-thumb-radius: 0px;
+/* circuit by tmraff */
+
+/* colour scheme variables */
+
+.theme-light {
+	--color-base-00: ;
+	--color-base-05: ;
+	--color-base-10: ;
+	--color-base-20: ;
+	--color-base-25: ;
+	--color-base-30: ;
+	--color-base-35: ;
+	--color-base-40: ;
+	--color-base-50: ;
+	--color-base-60: ;
+	--color-base-70: ;
+	--color-base-100: ;
 }
 
-.workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
-	display: none;
+.theme-dark {
+	--color-base-00: #050506;
+	--color-base-05: color-mix(var(--color-base-00), var(--color-base-100) 05%);
+	--color-base-10: color-mix(var(--color-base-00), var(--color-base-100) 10%);
+	--color-base-20: color-mix(var(--color-base-00), var(--color-base-100) 20%);
+	--color-base-25: color-mix(var(--color-base-00), var(--color-base-100) 25%);
+	--color-base-30: color-mix(var(--color-base-00), var(--color-base-100) 30%);
+	--color-base-35: color-mix(var(--color-base-00), var(--color-base-100) 35%);
+	--color-base-40: color-mix(var(--color-base-00), var(--color-base-100) 40%);
+	--color-base-50: color-mix(var(--color-base-00), var(--color-base-100) 50%);
+	--color-base-60: color-mix(var(--color-base-00), var(--color-base-100) 60%);
+	--color-base-70: color-mix(var(--color-base-00), var(--color-base-100) 70%);
+	--color-base-100: #3a4350;
 }
 
-svg * {
-	stroke-linecap: square;
-	stroke-linejoin: miter;
-	rx: 0;
-	ry: 0;
+/* variables */
+:root {
+	
 }
 
-.menu {
-	padding: var(--size-2-1);
-}
 
-.menu-item {
-	padding: var(--size-4-1) var(--size-4-2);
-}
-
-.menu-separator {
-	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
-}
