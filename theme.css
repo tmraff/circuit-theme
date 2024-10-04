@@ -2,7 +2,7 @@
 
 /* colour scheme variables */
 
-.theme-light {
+/* .theme-light {
 	--color-base-00: ;
 	--color-base-05: ;
 	--color-base-10: ;
@@ -15,9 +15,10 @@
 	--color-base-60: ;
 	--color-base-70: ;
 	--color-base-100: ;
-}
+} */
 
 .theme-dark {
+
 	/* colour bases */
 	--color-base-00: #050506;
 	--color-base-05: color-mix(var(--color-base-00), var(--color-base-100) 05%);
@@ -62,7 +63,7 @@
 
 	--color-pink: #fa99cd;
 	--color-pink-rgb: 250, 153, 205;
-
+	
 	/* mono rgb */
 	--mono-rgb-0: 0, 0, 0;
 	--mono-rgb-100: 255, 255, 255;
@@ -78,6 +79,7 @@
 	--accent-color-8: #b3439f;
 	--accent-color-9: #ff007a;
 	--accent-color-10: #2d3a45;
+<<<<<<< HEAD
 	
 	/* basic ui colour changes */
 	--background-primary: var(--color-base-10);
@@ -89,3 +91,13 @@
 body {
 	background-color: var(--background-primary);
 }
+=======
+}
+
+body {
+	/* basic ui changes */
+	--background-primary: var(--color-base-15);
+	--caret-color: var(--accent-color);
+}
+
+>>>>>>> e0ac36a (caret colour change)
