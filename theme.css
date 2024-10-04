@@ -80,8 +80,12 @@
 	--accent-color-10: #2d3a45;
 	
 	/* basic ui colour changes */
-	--background-primary: var(--color-base-10);	
+	--background-primary: var(--color-base-10);
+	--background-primary-alt: var(--color-base-20);
+	--background-secondary: var(--color-base-15);
+	--background-secondary-alt: var(--color-base-30);
 }
 
-
-
+body {
+	background-color: var(--background-primary);
+}
