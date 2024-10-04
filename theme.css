@@ -18,6 +18,7 @@
 }
 
 .theme-dark {
+	/* colour bases */
 	--color-base-00: #050506;
 	--color-base-05: color-mix(var(--color-base-00), var(--color-base-100) 05%);
 	--color-base-10: color-mix(var(--color-base-00), var(--color-base-100) 10%);
@@ -30,11 +31,57 @@
 	--color-base-60: color-mix(var(--color-base-00), var(--color-base-100) 60%);
 	--color-base-70: color-mix(var(--color-base-00), var(--color-base-100) 70%);
 	--color-base-100: #3a4350;
+
+	/* default accent colour */
+	--accent-h: 50;
+	--accent-s: 65;
+	--accent-l: 60;
+	--accent-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+
+	/* obsidian predefined colours */
+	--color-red: #fb464c;
+	--color-red-rgb: 251, 70, 76;
+
+	--color-orange: #e9973f;
+	--color-orange-rgb: 233, 151, 63;
+
+	--color-yellow: #e0de71;
+	--color-yellow-rgb: 224, 222, 113;
+
+	--color-green: #44cf6e;
+	--color-green-rgb: 68, 207, 110;
+
+	--color-cyan: #00bfbc;
+	--color-cyan-rgb: 83, 223, 221;
+
+	--color-blue: #027aff;
+	--color-blue-rgb: 2, 122, 255;
+
+	--color-purple: #a882ff;
+	--color-purple-rgb: 168, 130, 255;
+
+	--color-pink: #fa99cd;
+	--color-pink-rgb: 250, 153, 205;
+
+	/* mono rgb */
+	--mono-rgb-0: 0, 0, 0;
+	--mono-rgb-100: 255, 255, 255;
+	
+	/* default circuit accent colours */
+	--accent-color-1: #ff5733;
+	--accent-color-2: #dbcb58;
+	--accent-color-3: #f1e15b;
+	--accent-color-4: #399f94;
+	--accent-color-5: #008a9f;
+	--accent-color-6: #49d8e3;
+	--accent-color-7: #6f28a1;
+	--accent-color-8: #b3439f;
+	--accent-color-9: #ff007a;
+	--accent-color-10: #2d3a45;
+	
+	/* basic ui colour changes */
+	--background-primary: var(--color-base-10);	
 }
 
-/* variables */
-:root {
-	
-}
 
 
