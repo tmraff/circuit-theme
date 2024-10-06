@@ -81,7 +81,7 @@
 
 body {
 	/* ui font */
-	font-family: 'Orbitron', monospace;
+	font-family: 'JetBrains Mono', monospace;
 	--inline-title-font: 'Orbitron', monospace;
 	--inline-title-color: var(--accent-color);
 
@@ -92,10 +92,8 @@ body {
 	--h4-color: var(--accent-color-6);
 	--h5-color: var(--accent-color-7);
 	--h6-color: var(--accent-color-8);
-}
 
-/* headings classes */
-.headings-orbitron {
+	/* heading font */
 	--h1-font: 'Orbitron';
 	--h2-font: 'Orbitron';
 	--h3-font: 'Orbitron';
@@ -160,15 +158,15 @@ body {
 
 /* TO-DO recolour pngs */
 .png-white img[src*=".png"] {
-    filter: ;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(2%) hue-rotate(329deg) brightness(107%) contrast(101%); 
 }
 
 .png-black img[src*=".png"] {
-    filter: ;
+    filter: brightness(0) saturate(100%) invert(0%) sepia(6%) saturate(7500%) hue-rotate(284deg) brightness(94%) contrast(106%);
 }
 
 .png-accent-1 img[src*=".png"] {
-    filter: ;
+    filter: brightness(0) saturate(100%) invert(80%) sepia(17%) saturate(3387%) hue-rotate(54deg) brightness(101%) contrast(96%);
 }
 
 .png-accent-2 img[src*=".png"] {
