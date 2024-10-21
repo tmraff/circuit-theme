@@ -1,7 +1,7 @@
 /* circuit by tmraff */
 
 /* colour scheme variables */
-.theme-dark {
+.theme-dark, .theme-dark.is-mobile {
 
 	/* colour bases */
 	--color-base-00: #000005;
@@ -156,6 +156,11 @@ body {
 		color: whitesmoke;
 		text-shadow: 0 0 7px var(--h6-color), 0 0 7px var(--h6-color);
 	}
+}
+
+/* styling maths jax */
+mjx-math {
+	color: var(--accent-color);
 }
 
 /* styling tabs */
