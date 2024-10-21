@@ -53,16 +53,26 @@
 	--mono-rgb-100: 255, 255, 255;
 	
 	/* default circuit accent colours */
-	--accent-color-1: #4AF626;
-	--accent-color-2: #dbcb58;
-	--accent-color-3: #f1e15b;
-	--accent-color-4: #399f94;
-	--accent-color-5: #008a9f;
-	--accent-color-6: #49d8e3;
-	--accent-color-7: #6f28a1;
-	--accent-color-8: #b3439f;
-	--accent-color-9: #ff007a;
-	--accent-color-10: #2d3a45;
+	--color-terminal-green: #4af626;
+	--accent-color-1: var(--color-terminal-green);
+	--color-cyber-yellow: #dbcb58;
+	--accent-color-2: var(--color-cyber-yellow);
+	--color-samurai-red: #e50102;
+	--accent-color-3: var(--color-samurai-red);
+	--color-persian-green: #399f94;
+	--accent-color-4: var(--color-persian-green);
+	--color-munseil-blue: #008a9f;
+	--accent-color-5: var(--color-munseil-blue);
+	--color-robin-egg: #49d8e3;
+	--accent-color-6: var(--color-robin-egg);
+	--color-cyber-purple: #a12cff;
+	--accent-color-7: var(--color-cyber-purple);
+	--color-fuchsia: #b3439f;
+	--accent-color-8: var(--color-fuchsia);
+	--color-hot-pink: #ff007a;
+	--accent-color-9: var(--color-hot-pink);
+	--color-slate: #2d3a45;
+	--accent-color-10: var(--color-slate);
 	
 	/* basic ui colour changes */
 	--background-primary: var(--color-base-20);
@@ -100,6 +110,11 @@ body {
 	--h4-font: 'Orbitron';
 	--h5-font: 'Orbitron';
 	--h6-font: 'Orbitron';
+
+	/* graph */
+	--graph-line: var(--accent-color-10);
+	--graph-node: var(--accent-color-2);
+	--graph-node-unresolved: var(--color-base-100);
 }
 
 .headings-cyber-rainbow {
@@ -157,7 +172,7 @@ body {
 	}
 }
 
-/* TO-DO recolour pngs */
+/* png recolour classes */
 .png-white img[src*=".png"] {
     filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(2%) hue-rotate(329deg) brightness(107%) contrast(101%); 
 }
@@ -166,44 +181,45 @@ body {
     filter: brightness(0) saturate(100%) invert(0%) sepia(6%) saturate(7500%) hue-rotate(284deg) brightness(94%) contrast(106%);
 }
 
-.png-accent-1 img[src*=".png"] {
+.png-terminal-green img[src*=".png"] {
     filter: brightness(0) saturate(100%) invert(80%) sepia(17%) saturate(3387%) hue-rotate(54deg) brightness(101%) contrast(96%);
 }
 
-.png-accent-2 img[src*=".png"] {
-    filter: ;
+.png-cyber-yellow img[src*=".png"] {
+    filter: brightness(0) saturate(100%) invert(92%) sepia(17%) saturate(1412%) hue-rotate(357deg) brightness(92%) contrast(86%);
 }
 
-.png-accent-3 img[src*=".png"] {
-    filter: ;
+.png-samurai-red img[src*=".png"] {
+    filter: brightness(0) saturate(100%) invert(33%) sepia(90%) saturate(6844%) hue-rotate(350deg) brightness(82%) contrast(123%);
 }
 
-.png-accent-4 img[src*=".png"] {
-    filter: ;
+.png-persian-green img[src*=".png"] {
+
+    filter: brightness(0) saturate(100%) invert(53%) sepia(69%) saturate(370%) hue-rotate(124deg) brightness(90%) contrast(85%);
 }
 
-.png-accent-5 img[src*=".png"] {
-    filter: ;
+.png-munseil-blue img[src*=".png"] {
+    filter: brightness(0) saturate(100%) invert(26%) sepia(99%) saturate(1700%) hue-rotate(165deg) brightness(99%) contrast(105%);
 }
 
-.png-accent-6 img[src*=".png"] {
-    filter: ;
+.png-robin-egg img[src*=".png"] {
+    filter: brightness(0) saturate(100%) invert(64%) sepia(49%) saturate(506%) hue-rotate(136deg) brightness(108%) contrast(89%);
 }
 
-.png-accent-7 img[src*=".png"] {
-    filter: ;
+.png-cyber-purple img[src*=".png"] {
+    filter: brightness(0) saturate(100%) invert(26%) sepia(70%) saturate(5683%) hue-rotate(266deg) brightness(101%) contrast(103%);
 }
 
-.png-accent-8 img[src*=".png"] {
-    filter: ;
+.png-fuchsia img[src*=".png"] {
+    filter: brightness(0) saturate(100%) invert(32%) sepia(77%) saturate(1218%) hue-rotate(275deg) brightness(87%) contrast(83%);
 }
 
-.png-accent-9 img[src*=".png"] {
-    filter: ;
+.png-hot-pink img[src*=".png"] {
+    filter: brightness(0) saturate(100%) invert(13%) sepia(70%) saturate(7262%) hue-rotate(326deg) brightness(104%) contrast(105%);
 }
 
-.png-accent-10 img[src*=".png"] {
-    filter: ;
+.png-slate img[src*=".png"] {
+    filter: brightness(0) saturate(100%) invert(18%) sepia(33%) saturate(461%) hue-rotate(165deg) brightness(92%) contrast(87%);
 }
 
 
