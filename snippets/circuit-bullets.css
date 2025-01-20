@@ -1,0 +1,107 @@
+/* circuit bullet snippet by tmraff */
+/* MIT Licence */
+
+/* Variables */
+body {
+  --circuit-line-color: white;
+  --circuit-bullet-color: white;
+  --list-marker-color: var(--circuit-bullet-color);
+  --list-bullet-border: 1px solid var(--list-marker-color);
+  
+  --alignment-negative-3: calc(-3 * var(--list-bullet-size) - calc(var(--list-bullet-size) / 2));
+  --alignment-negative-2: calc(-2 * var(--list-bullet-size) - calc(var(--list-bullet-size) / 2));
+  --alignment-negative-1: calc(-1 * var(--list-bullet-size));
+  --alignment-positive-2: calc(2 * var(--list-bullet-size) + calc(var(--list-bullet-size) / 2));
+  --alignment-positive-2-5: calc(2.5 * var(--list-bullet-size) + calc(var(--list-bullet-size) / 2));
+  --alignment-positive-3: calc(3 * var(--list-bullet-size) + calc(var(--list-bullet-size) / 2));
+  --alignment-positive-5: calc(5 * var(--list-bullet-size) + calc(var(--list-bullet-size) / 2) + 1px);
+  --alignment-vertical-line-bottom: calc(-2 * var(--list-bullet-size));
+}
+
+body.is-mobile {
+  --alignment-negative-3: calc(-3 * var(--list-bullet-size) - calc(var(--list-bullet-size) / 4) - 1px);
+  --alignment-negative-2: calc(-2 * var(--list-bullet-size) - calc(var(--list-bullet-size) / 2)); /* diagonal left */
+  --alignment-negative-1: calc(-1 * var(--list-bullet-size));
+  --alignment-positive-2: calc(2 * var(--list-bullet-size) + calc(var(--list-bullet-size) / 4)); /* changes diagonal horizontal */
+  --alignment-positive-2-5: calc(2.5 * var(--list-bullet-size) + calc(var(--list-bullet-size) / 4) - 1px); /* diagonal top */
+  --alignment-positive-3: calc(3 * var(--list-bullet-size) + calc(var(--list-bullet-size) / 4));
+  --alignment-positive-5: calc(5 * var(--list-bullet-size) + calc(var(--list-bullet-size) / 4));
+  --alignment-vertical-line-bottom: calc(-2 * var(--list-bullet-size) + 2px);
+}
+
+/* Remove Obsidian's bullets and guide lines */
+.list-bullet:after {
+	content: none;
+}
+
+.markdown-rendered.show-indentation-guide li > ul::before {
+  content: none;
+}
+
+/* Custom bullet points */
+.list-bullet:after {
+  --list-bullet-size: 0.4em;
+  content: ""; 
+  color: var(--list-marker-color);
+  background-color: transparent;
+  border: var(--list-bullet-border);
+  display: inline-block; 
+  width: var(--list-bullet-size);
+  height: var(--list-bullet-size);
+  margin-inline-end: var(--list-bullet-size);
+}
+
+/* Vertical guide lines */
+.markdown-rendered ul > li:not(:has(> input[type="checkbox"])) {
+  position: relative;
+}
+
+.markdown-rendered ul > li:not(:has(> input[type="checkbox"]))::before {
+  content: "";
+  position: absolute;
+  width: var(--indentation-guide-width);
+  background-color: var(--circuit-line-color);
+  top: var(--alignment-positive-3);
+  bottom: var(--alignment-vertical-line-bottom);
+  left: var(--alignment-negative-3);
+}
+
+/* Diagonal guide lines */
+.markdown-rendered ul > li:has(> ul):not(:has(> input[type="checkbox"]))::after {
+  content: "";
+  position: absolute;
+  height: var(--indentation-guide-width); 
+  background-color: var(--circuit-line-color);
+  width: calc(3 * var(--list-bullet-size));
+  transform: rotate(60deg);
+  transform-origin: left center;
+  top: var(--alignment-positive-2-5);
+  left: var(--alignment-negative-2);
+}
+
+/* Vertical lines joining to diagonal lines */
+.markdown-rendered ul > li:has(> ul):not(:has(> input[type="checkbox"]))::before {
+  content: "";
+  position: absolute;
+  width: var(--indentation-guide-width);
+  background-color: var(--circuit-line-color);
+  top: var(--alignment-positive-5);
+  bottom: 0; 
+  left: var(--alignment-negative-1);
+}
+
+/* Remove guide line from last child that has no child of its own */
+.markdown-rendered ul > li:last-child:not(:has(> ul)):not(:has(> input[type="checkbox"]))::before {
+  content: none;
+}
+
+/* Hide diagonal lines for collapsed bullets */
+.markdown-rendered ul > li.is-collapsed:not(:has(> input[type="checkbox"]))::after, .markdown-rendered ul > li.is-collapsed:not(:has(> input[type="checkbox"]))::before {
+  content: none;
+}
+
+/* Hide the default collapse icon */
+.markdown-rendered ul > li > .collapse-icon {
+  left: var(--alignment-positive-3);
+  opacity: 0;
+}
