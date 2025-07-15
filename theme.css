@@ -230,10 +230,6 @@ mjx-math {
 
 
 /* list style */
-/* Remove Obsidian's bullets and guide lines */
-.list-bullet:after {
-	content: none;
-}
 
 .markdown-rendered.show-indentation-guide li > ul::before {
   content: none;
