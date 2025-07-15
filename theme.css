@@ -189,15 +189,15 @@ body.is-mobile {
 }
 
 /* styling mermaid diagrams */
-.markdown-preview-view .mermaid {
+/* .markdown-preview-view .mermaid {
 	max-width: 100%;
 	width: auto;
 	overflow: auto;
 	max-height: 100%;
-}
+} */
 
 /* styling sci-fi decorative elements. heavily inspired by ElsaTam's sci-fi snippet */
-/* styling horizontal rule */
+/* styling horizontal rule - need to change because i hate the current one i have */
 .markdown-preview-view hr, .markdown-source-view hr {
 	border: none;
 	background-color: var(--scifi-color);
@@ -214,7 +214,7 @@ mjx-math {
 	color: var(--accent-color);
 }
 
-/* styling tabs */
+/* styling tabs - need to adjust the shape slightly so there's just one corner cut off */
 .workspace-tab-header {
 	--tab-radius: 0;
 	--background-modifier-hover: var(--background-primary);
@@ -306,6 +306,158 @@ mjx-math {
   left: var(--alignment-positive-3);
   opacity: 0;
 }
+
+/* Sci-fi callouts */
+
+.callout[data-callout="margin"] {
+  --callout-color: var(--accent-color-3); /* Munseil Blue */
+  --callout-icon: lucide-sticky-note;
+}
+
+.callout[data-callout="warning"] {
+  --callout-color: var(--accent-color-1); /* Cyber Yellow */
+  --callout-icon: lucide-alert-triangle;
+}
+
+.callout[data-callout="terminal"] {
+  --callout-color: var(--accent-color-7); /* Terminal Green */
+  --callout-icon: lucide-terminal;
+}
+
+.callout[data-callout="example"] {
+  --callout-color: var(--accent-color-4); /* Robin Egg */
+  --callout-icon: lucide-app-window;
+}
+
+.callout[data-callout="definition"] {
+  --callout-color: var(--accent-color-5); /* Cyber Purple */
+  --callout-icon: lucide-book-a;
+}
+
+.callout[data-callout="bibliography"] {
+  --callout-color: var(--accent-color-8); /* Hot Pink */
+  --callout-icon: lucide-library;
+}
+
+.callout[data-callout="margin"] .callout-title,
+.callout[data-callout="warning"] .callout-title,
+.callout[data-callout="terminal"] .callout-title,
+.callout[data-callout="example"] .callout-title,
+.callout[data-callout="definition"] .callout-title,
+.callout[data-callout="bibliography"] .callout-title,
+.callout[data-callout="margin"] .callout-icon,
+.callout[data-callout="warning"] .callout-icon,
+.callout[data-callout="terminal"] .callout-icon,
+.callout[data-callout="example"] .callout-icon,
+.callout[data-callout="definition"] .callout-icon,
+.callout[data-callout="bibliography"] .callout-icon {
+  text-shadow: 0 0 4px var(--callout-color);
+  color: var(--callout-color);
+}
+
+.callout[data-callout="margin"] .callout-title svg,
+.callout[data-callout="margin"] .callout-fold,
+.callout[data-callout="warning"] .callout-title svg,
+.callout[data-callout="warning"] .callout-fold,
+.callout[data-callout="terminal"] .callout-title svg,
+.callout[data-callout="terminal"] .callout-fold,
+.callout[data-callout="example"] .callout-title svg,
+.callout[data-callout="example"] .callout-fold,
+.callout[data-callout="definition"] .callout-title svg,
+.callout[data-callout="definition"] .callout-fold,
+.callout[data-callout="bibliography"] .callout-title svg,
+.callout[data-callout="bibliography"] .callout-fold {
+  filter: drop-shadow(0 0 4px var(--callout-color));
+  stroke-width: 3;
+}
+
+
+.callout-title {
+  color: var(--callout-color);
+  display: flex;
+  gap: 0.5rem;
+  font-weight: 300;
+}
+
+.callout-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1em; /* match font size of title */
+  width: 1em;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.callout[data-callout="margin"],
+.callout[data-callout="warning"],
+.callout[data-callout="terminal"],
+.callout[data-callout="example"],
+.callout[data-callout="definition"],
+.callout[data-callout="bibliography"] {
+  position: relative;
+  background-color: var(--background-secondary);
+  padding: 1rem; 
+  clip-path: polygon(
+    0% 0%, 
+    calc(100% - 10px) 0%, 
+    100% 10px, 
+    100% 100%, 
+    10px 100%, 
+    0% calc(100% - 10px)
+  );
+  box-sizing: border-box;
+  z-index: 0;
+  box-shadow: 0 0 2px 2px var(--callout-color) inset;
+}
+
+.callout[data-callout="margin"]::before,
+.callout[data-callout="warning"]::before,
+.callout[data-callout="terminal"]::before,
+.callout[data-callout="example"]::before,
+.callout[data-callout="definition"]::before,
+.callout[data-callout="bibliography"]::before {
+  content: '';
+  position: absolute;
+  width: calc(100% - 40px);
+  height: 10px;
+  background-color: var(--background-primary);
+  transform: rotate(45deg); 
+  bottom: 21px;
+  left: -11px; 
+  transform-origin: left center; 
+  z-index: 1;
+  clip-path: polygon(
+    10px 0px, calc(100% - 10px) 0px, calc(100% - 20px) 10px, 20px 10px
+  );
+  box-shadow: 0 0 2px 2px var(--callout-color) inset;
+}
+
+.callout[data-callout="margin"]::after,
+.callout[data-callout="warning"]::after,
+.callout[data-callout="terminal"]::after,
+.callout[data-callout="example"]::after,
+.callout[data-callout="definition"]::after,
+.callout[data-callout="bibliography"]::after {
+  content: '';
+  position: absolute;
+  width: calc(100% - 40px);
+  height: 10px;
+  background-color: var(--background-primary);
+  transform: rotate(225deg); 
+  top: 21px;
+  right: calc(-100% + 29px); 
+  transform-origin: left center; 
+  z-index: 1;
+  clip-path: polygon(
+    10px 0px, calc(100% - 10px) 0px, calc(100% - 20px) 10px, 20px 10px
+  );
+  box-shadow: 0 0 2px 2px var(--callout-color) inset;
+}
+
+
+
+
 
 /* png recolour classes */
 .png-white img[src*=".png"] {
